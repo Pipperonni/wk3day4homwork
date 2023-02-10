@@ -15,14 +15,14 @@ class Cart():
         print("SHOPPING CART:")
 
         for key, val in self.items.items():
-            total = val.quantity * val.price
+            # total = val.quantity * val.price
             print(f"{key.title()} x{val.quantity}: ${'{:.2f}'.format(total)}")
 
         print("=~" * 15)
         
     def delete(self, item_to_delete):
         del self.items[item_to_delete]
-    
+        
 # My actual products (banana, apple)
 class Item():
     def __init__(self, name, quantity, price):
@@ -56,3 +56,5 @@ class Shop():
                 break
             else:
                 print("Invalid input, please try again.")
+
+

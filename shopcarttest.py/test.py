@@ -29,18 +29,14 @@ class ShoppingCartTest(unittest.TestCase):
         
         del_test.cart.delete("milk")
         self.assertEqual(len(del_test.cart.items), 2)
-        for x in del_test.cart.items:
-            if del_test.cart.items[x] == del_test.cart.items["eggs"]:
-                return True
-            else:
-                return False
-        del_test.cart.delete("milk")
-        self.assertEqual(len(del_test.cart.items), 2)
-        for x in del_test.cart.items:
-            if del_test.cart.items[x] == del_test.cart.items["bread"]:
-                return True
-            else:
-                return False
+        
+        del_test.cart.delete("eggs")
+        self.assertEqual(len(del_test.cart.items), 1)
+        
+        del_test.cart.delete("bread")
+        self.assertEqual(len(del_test.cart.items), 0)
+        
+             
         
 
 
