@@ -9,6 +9,10 @@ class ShoppingCartTest(unittest.TestCase):
         self.assertEqual(len(test_addeing.cart.items), 1)
         for x in test_addeing.cart.items:
             self.assertIsInstance(test_addeing.cart.items[x], Item)
+        test_addeing.cart.add("eggs", "5", "4.99")
+        self.assertEqual(len(test_addeing.cart.items), 2)
+        for x in test_addeing.cart.items:
+            self.assertIsInstance(test_addeing.cart.items[x], Item)
         
 
     def test_product(self):
